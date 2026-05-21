@@ -7,6 +7,13 @@ import TopCollectionCard from '../components/top_collection_card';
 import appStoreLogo from "../assets/images/app-store-logo.png"
 import nftBannerImg from "../assets/images/create-nft-banner-img.svg"
 import nftImage from "../assets/images/nft-1.svg";
+import collectionAdmin from "../assets/images/collection-admin.svg";
+import collectionImg1 from "../assets/images/collection-img-1.svg"
+import collectionImg2 from "../assets/images/collection-img-2.svg"
+import collectionImg3 from "../assets/images/collection-img-3.svg"
+import collectionImg4 from "../assets/images/collection-img-4.svg"
+import collectionImg5 from "../assets/images/collection-img-5.svg"
+import articleImg from "../assets/images/article-img.svg"
 
 const bidList = [
     {
@@ -40,6 +47,104 @@ const bidList = [
         bid_created_by: "Martin Lora",
         bid_highest: "15.25",
         bid_counter: 36312,
+    },
+];
+
+const collectionList = [
+    {
+        id: 1,
+        collection_images: {
+            collection_image_1: collectionImg1,
+            collection_image_2: collectionImg2,
+            collection_image_3: collectionImg3,
+            collection_image_4: collectionImg4,
+            collection_image_5: collectionImg5,
+        },
+        collection_title: "Santiago collection",
+        collection_created_by: "@Martin janon",
+        collection_user: collectionAdmin
+    },
+    {
+        id: 1,
+        collection_images: {
+            collection_image_1: collectionImg1,
+            collection_image_2: collectionImg2,
+            collection_image_3: collectionImg3,
+            collection_image_4: collectionImg4,
+            collection_image_5: collectionImg5,
+        },
+        collection_title: "Santiago collection",
+        collection_created_by: "@Martin janon",
+        collection_user: collectionAdmin
+    },
+    {
+        id: 1,
+        collection_images: {
+            collection_image_1: collectionImg1,
+            collection_image_2: collectionImg2,
+            collection_image_3: collectionImg3,
+            collection_image_4: collectionImg4,
+            collection_image_5: collectionImg5,
+        },
+        collection_title: "Santiago collection",
+        collection_created_by: "@Martin janon",
+        collection_user: collectionAdmin
+    },
+    {
+        id: 1,
+        collection_images: {
+            collection_image_1: collectionImg1,
+            collection_image_2: collectionImg2,
+            collection_image_3: collectionImg3,
+            collection_image_4: collectionImg4,
+            collection_image_5: collectionImg5,
+        },
+        collection_title: "Santiago collection",
+        collection_created_by: "@Martin janon",
+        collection_user: collectionAdmin
+    },
+];
+
+const articleList = [
+    {
+        id: 1,
+        article_image: articleImg,
+        article_title: "The Best NFT blockchains",
+        bid_created_by: "Martin Lora",
+        article_short_descrition: "Do you know the right NFT blockchain for you? It may be strange; But anyone can choose a different blockchain to operate in the world of different tokens. Currently, more than ten blockchain networks support NFTs; But in which of these networks you can succeed, it depends on the type of activity and your goals.",
+        article_long_descrition: "Do you know the right NFT blockchain for you? It may be strange; But anyone can choose a different blockchain to operate in the world of different tokens. Currently, more than ten blockchain networks support NFTs; But in which of these networks you can succeed, it depends on the type of activity and your goals.",
+        article_published_date: 1779404542,
+        article_watched: 8,
+    },
+    {
+        id: 1,
+        article_image: articleImg,
+        article_title: "The Best NFT blockchains",
+        bid_created_by: "Martin Lora",
+        article_short_descrition: "Do you know the right NFT blockchain for you? It may be strange; But anyone can choose a different blockchain to operate in the world of different tokens. Currently, more than ten blockchain networks support NFTs; But in which of these networks you can succeed, it depends on the type of activity and your goals.",
+        article_long_descrition: "Do you know the right NFT blockchain for you? It may be strange; But anyone can choose a different blockchain to operate in the world of different tokens. Currently, more than ten blockchain networks support NFTs; But in which of these networks you can succeed, it depends on the type of activity and your goals.",
+        article_published_date: 1779404542,
+        article_watched: 8,
+    },
+    {
+        id: 1,
+        article_image: articleImg,
+        article_title: "The Best NFT blockchains",
+        bid_created_by: "Martin Lora",
+        article_short_descrition: "Do you know the right NFT blockchain for you? It may be strange; But anyone can choose a different blockchain to operate in the world of different tokens. Currently, more than ten blockchain networks support NFTs; But in which of these networks you can succeed, it depends on the type of activity and your goals.",
+        article_long_descrition: "Do you know the right NFT blockchain for you? It may be strange; But anyone can choose a different blockchain to operate in the world of different tokens. Currently, more than ten blockchain networks support NFTs; But in which of these networks you can succeed, it depends on the type of activity and your goals.",
+        article_published_date: 1779404542,
+        article_watched: 8,
+    },
+    {
+        id: 1,
+        article_image: articleImg,
+        article_title: "The Best NFT blockchains",
+        bid_created_by: "Martin Lora",
+        article_short_descrition: "Do you know the right NFT blockchain for you? It may be strange; But anyone can choose a different blockchain to operate in the world of different tokens. Currently, more than ten blockchain networks support NFTs; But in which of these networks you can succeed, it depends on the type of activity and your goals.",
+        article_long_descrition: "Do you know the right NFT blockchain for you? It may be strange; But anyone can choose a different blockchain to operate in the world of different tokens. Currently, more than ten blockchain networks support NFTs; But in which of these networks you can succeed, it depends on the type of activity and your goals.",
+        article_published_date: 1779404542,
+        article_watched: 8,
     },
 ];
 
@@ -114,9 +219,13 @@ const Home = () => {
             <div className='max-w-[90%] mx-auto'>
                 <div className='flex flex-col gap-[30px]'>
                     <h1 className='m-0 text-center font-poppins font-bold text-[40px] text-[#E7F1D7]'>POPULAR COLLECTIONS</h1>
-                    <div className="grid grid-cols-3 gap-[15px]">
-                        <CollectionCard />
-                    </div>
+                    <CommonSlider
+                        data={collectionList}
+                        slidesPerView={3}
+                        renderItem={(collection) => (
+                            <CollectionCard collection={collection} />
+                        )}
+                    />
                 </div>
 
                 <div className='flex flex-col gap-[40px]'>
@@ -124,9 +233,13 @@ const Home = () => {
                         <h1 className='m-0 text-center font-poppins font-bold text-[40px] text-[#E7F1D7]'>Article sources</h1>
                         <p className='m-0 text-center font-poppins font-normal text-[28px] text-[#DBEAC3]'>NFT will open thousands of new opportunities for this new generation.</p>
                     </div>
-                    <div className="grid grid-cols-3 gap-[15px]">
-                        <ArticleCard />
-                    </div>
+                    <CommonSlider
+                        data={articleList}
+                        slidesPerView={3}
+                        renderItem={(article) => (
+                            <ArticleCard article={article} />
+                        )}
+                    />
                 </div>
             </div>
 
