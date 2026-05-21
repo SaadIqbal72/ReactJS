@@ -45,9 +45,9 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className="col-span-2 flex justify-end">
-                    <div className="relative px-[3px] w-[350px] h-max flex items-center rounded-[15px] overflow-hidden border border-[#454C57] bg-[#454C57]">
+                    <div className="relative px-[3px] w-[350px] h-max flex items-center rounded-[10px] overflow-hidden border border-[#454C57] bg-[#454C57]">
                         <input type="text" className="w-full  h-[50px]  border border-[#454C57] bg-[#454C57] !outline-none" />
-                        <button className="min-w-max flex items-center gap-[10px] justify-between h-full px-[10px] h-[45px] font-poppins text-[16px] rounded-[15px] text-[#44522F] bg-[#B7D487]">
+                        <button className="min-w-max flex items-center gap-[10px] justify-between h-full p-[10px] h-[42px] font-poppins font-medium text-[16px] rounded-[10px] text-[#44522F] bg-[#B7D487]">
                             <img src={searchIcon} alt="Search Icon" className="w-[30px] h-[30px] object-contain" />Searcch</button>
                     </div>
                 </div>

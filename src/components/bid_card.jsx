@@ -4,7 +4,7 @@ import nftImage from "../assets/images/nft-1.svg"
 const BidCard = () => {
     return (
         <div className="p-[15px] flex flex-col gap-[15px] rounded-[24px] bg-[#2F3642]">
-            <div className="rounded-[15px] overflow-hidden h-[300px] border-[2px] border-[#454C57]">
+            <div className="rounded-[15px] overflow-hidden h-[330px] border-[2px] border-[#454C57]">
                 <img src={nftImage} alt="NFT Image" className="w-full h-full" />
             </div>
             <h6 className="m-0 font-poppins font-medium text-[22px] text-[#fff]">Inner portrait #3425</h6>

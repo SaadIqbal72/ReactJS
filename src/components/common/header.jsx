@@ -1,11 +1,16 @@
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import logo from "../../assets/images/logo.svg"
+import searchIcon from "../../assets/images/search-icon.svg"
+import cartIcon from "../../assets/images/cart-icon.svg"
+import loginIcon from "../../assets/images/login-icon.svg"
 
 const navigation = [
-    { name: 'Dashboard', href: '#', current: true },
-    { name: 'Team', href: '#', current: false },
-    { name: 'Projects', href: '#', current: false },
-    { name: 'Calendar', href: '#', current: false },
+    { name: 'Home', href: '#', current: true },
+    { name: 'Buy NFT', href: '#', current: false },
+    { name: 'About us', href: '#', current: false },
+    { name: 'Contact', href: '#', current: false },
+    { name: 'Wallet', href: '#', current: false },
 ]
 
 function classNames(...classes) {
@@ -16,9 +21,9 @@ const Header = () => {
     return (
         <Disclosure
             as="nav"
-            className="relative bg-gray-800/50 after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-white/10"
+            className="relative bg-[#202835]"
         >
-            <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+            <div className="px-2 sm:px-6 lg:p-[20px]">
                 <div className="relative flex h-16 items-center justify-between">
                     <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                         {/* Mobile menu button*/}
@@ -33,8 +38,8 @@ const Header = () => {
                         <div className="flex shrink-0 items-center">
                             <img
                                 alt="Your Company"
-                                src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
-                                className="h-8 w-auto"
+                                src={logo}
+                                className="h-[50px] w-auto"
                             />
                         </div>
                         <div className="hidden sm:ml-6 sm:block">
@@ -45,28 +50,40 @@ const Header = () => {
                                         href={item.href}
                                         aria-current={item.current ? 'page' : undefined}
                                         className={classNames(
-                                            item.current ? 'bg-gray-950/50 text-white' : 'text-gray-300 hover:bg-white/5 hover:text-white',
-                                            'rounded-md px-3 py-2 text-sm font-medium',
+                                            item.current ? 'text-[#E897B4]' : 'text-[#E7F1D7]',
+                                            'rounded-md px-3 py-2 text-[20px] font-poppins font-medium',
                                         )}
                                     >
                                         {item.name}
                                     </a>
                                 ))}
                             </div>
-                        </div>
+                        </div>  
                     </div>
-                    <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                    <div className="absolute inset-y-0 right-0 flex items-center gap-[10px] pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                        <div className="relative px-[2px] w-[250px] h-max flex items-center gap-[10px] rounded-[10px] overflow-hidden border border-[#454C57] bg-[#454C57]">
+                            <button className="min-w-max flex items-center gap-[10px] p-[2px] justify-between h-full rounded-[10px] bg-[#B7D487] text-[#fff]">
+                                <img src={searchIcon} alt="Search Icon" className="w-[30px] h-[30px] object-contain" />
+                            </button>
+                            <input type="text" placeholder='Browse shop' className="w-full h-[40px] font-poppins text-[16px] border border-[#454C57] bg-[#454C57] text-[#fff] !outline-none" />
+                        </div>
                         <button
                             type="button"
-                            className="relative rounded-full p-1 text-gray-400 hover:text-white focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-indigo-500"
+                            className="relative rounded-[10px] p-1 bg-[#B7D487]"
                         >
-                            <span className="absolute -inset-1.5" />
-                            <span className="sr-only">View notifications</span>
-                            <BellIcon aria-hidden="true" className="size-6" />
+                            {/* <span className="absolute -inset-1.5" />
+                            <span className="sr-only">View notifications</span> */}
+                            <img src={cartIcon} alt="Cart Icon" className='w-[32px] h-[32px] object-contain' />
+                        </button>
+                        <button
+                            type="button"
+                            className="relative rounded-[10px] p-1 bg-[#B7D487]"
+                        >
+                            <img src={loginIcon} alt="Cart Icon" className='w-[32px] h-[32px] object-contain' />
                         </button>
 
                         {/* Profile dropdown */}
-                        <Menu as="div" className="relative ml-3">
+                        <Menu as="div" className="relative ml-3 hidden">
                             <MenuButton className="relative flex rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
                                 <span className="absolute -inset-1.5" />
                                 <span className="sr-only">Open user menu</span>
