@@ -1,13 +1,42 @@
-const ClockCountdown = () => {
-    return (
-        <div>
-            <span className="countdown font-mono text-2xl">
-                <span style={{ "--value": 10 } /* as React.CSSProperties */} aria-live="polite">10</span>:
-                <span style={{ "--value": 24 } /* as React.CSSProperties */} aria-live="polite">24</span>:
-                <span style={{ "--value": 59, "--digits": 2 } /* as React.CSSProperties */} aria-live="polite">59</span>
-            </span>
-        </div>
-    )
-}
+import { useEffect, useState } from "react";
 
-export default ClockCountdown
+const ClockCountdown = ({ bidCounter }) => {
+    const [timeLeft, setTimeLeft] = useState(bidCounter || 0);
+    const [finished, setFinished] = useState(false);
+
+    useEffect(() => {
+        setTimeLeft(bidCounter || 0);
+    }, [bidCounter]);
+
+    useEffect(() => {
+        if (!timeLeft) return;
+        const interval = setInterval(() => {
+            setTimeLeft((prev) => {
+                if (prev <= 1) {
+                    clearInterval(interval);
+                    setFinished(true);
+                    return 0;
+                }
+                return prev - 1;
+            });
+        }, 1000);
+        return () => clearInterval(interval);
+    }, [timeLeft]);
+
+    const formatTime = (seconds) => {
+        const hours = Math.floor(seconds / 3600);
+        const minutes = Math.floor((seconds % 3600) / 60);
+        const secs = seconds % 60;
+        return `${String(hours).padStart(2, "0")} : ${String(
+            minutes
+        ).padStart(2, "0")} : ${String(secs).padStart(2, "0")}`;
+    };
+
+    return (
+        <div className="text-[18px] font-medium font-poppins text-[#E897B4]">
+            {finished ? "Bid close!" : formatTime(timeLeft)}
+        </div>
+    );
+};
+
+export default ClockCountdown;

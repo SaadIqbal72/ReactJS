@@ -15,7 +15,7 @@ const bidList = [
         bid_title: "Inner portrait #3425",
         bid_created_by: "Martin Lora",
         bid_highest: "15.25",
-        bid_counter: "10 : 03 : 12",
+        bid_counter: 536312,
     },
     {
         id: 2,
@@ -23,7 +23,7 @@ const bidList = [
         bid_title: "Inner portrait #3425",
         bid_created_by: "Martin Lora",
         bid_highest: "15.25",
-        bid_counter: "10 : 03 : 12",
+        bid_counter: 36312,
     },
     {
         id: 3,
@@ -31,7 +31,7 @@ const bidList = [
         bid_title: "Inner portrait #3425",
         bid_created_by: "Martin Lora",
         bid_highest: "15.25",
-        bid_counter: "10 : 03 : 12",
+        bid_counter: 936312,
     },
     {
         id: 3,
@@ -39,7 +39,7 @@ const bidList = [
         bid_title: "Inner portrait #3425",
         bid_created_by: "Martin Lora",
         bid_highest: "15.25",
-        bid_counter: "10 : 03 : 12",
+        bid_counter: 36312,
     },
 ];
 

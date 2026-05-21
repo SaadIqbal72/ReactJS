@@ -4,7 +4,7 @@ import ClockCountdown from "./counter/clock_countdown";
 const BidCard = ({ bid }) => {
     return (
         <div className="p-[15px] flex flex-col gap-[15px] rounded-[24px] bg-[#2F3642]">
-            <ClockCountdown/>
+            
             <div className="rounded-[15px] overflow-hidden h-[330px] border-[2px] border-[#454C57]">
                 <img
                     src={bid.bid_image}
@@ -43,7 +43,7 @@ const BidCard = ({ bid }) => {
                     Place a bid
                 </button>
                 <div className="w-[40%] h-[48px] flex items-center justify-center rounded-[12px] text-[20px] font-poppins font-medium border text-[#E897B4] border-[#E897B4]">
-                    {bid.bid_counter}
+                    <ClockCountdown bidCounter={bid.bid_counter} />
                 </div>
             </div>
         </div>
