@@ -14,6 +14,7 @@ import collectionImg3 from "../assets/images/collection-img-3.svg"
 import collectionImg4 from "../assets/images/collection-img-4.svg"
 import collectionImg5 from "../assets/images/collection-img-5.svg"
 import articleImg from "../assets/images/article-img.svg"
+import { Link } from 'react-router-dom';
 
 const bidList = [
     {
@@ -240,6 +241,9 @@ const Home = () => {
                             <ArticleCard article={article} />
                         )}
                     />
+                    <div className='flex items-center justify-center w-full'>
+                        <Link to="/article/list" className="w-max px-[30px] py-[7px] rounded-[12px] text-[20px] font-poppins font-medium text-[#44522F] bg-[#B7D487]">Go to Articles</Link>
+                    </div>
                 </div>
             </div>
 

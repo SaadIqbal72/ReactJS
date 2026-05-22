@@ -1,23 +1,21 @@
+import './index.css'
 import '@fontsource/roboto'
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from './views/Home';
-import './index.css'
+import { BrowserRouter } from "react-router-dom";
 import Footer from './components/common/footer';
 import Header from './components/common/header';
+import AppRoutes from './routes/AppRoutes';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Header />
     <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<Home />}></Route>
-      </Routes>
+      <Header />
+      <AppRoutes />
+      <Footer />
     </BrowserRouter>
-    <Footer />
   </React.StrictMode>
 );
 
