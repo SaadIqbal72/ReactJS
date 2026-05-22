@@ -4,6 +4,7 @@ import collectionImg2 from "../assets/images/collection-img-2.svg"
 import collectionImg3 from "../assets/images/collection-img-3.svg"
 import collectionImg4 from "../assets/images/collection-img-4.svg"
 import collectionImg5 from "../assets/images/collection-img-5.svg"
+import { Link } from "react-router-dom";
 
 const ArticleCard = ({ article }) => {
 
@@ -25,7 +26,8 @@ const ArticleCard = ({ article }) => {
                 <p className="m-0 text-[24px] font-poppins font-semibold text-[#E7F1D7]">{article.article_title}</p>
                 <p className="m-0 text-[18px] font-poppins font-normal text-[#E7F1D7]">{article.article_short_descrition}</p>
                 <div className="flex items-center justify-between">
-                    <p className="m-0 text-[20px] font-poppins font-medium text-[#E897B4]">read more</p>
+                    {/* <p className="m-0 text-[20px] font-poppins font-medium text-[#E897B4]">read more</p> */}
+                    <Link to={`/article/detail/${article.article_title_slug}`} className="m-0 text-[20px] font-poppins font-medium text-[#E897B4]">read more</Link>
                     <div className="flex items-center gap-[3px]">
                         <p className="m-0 text-[12px] font-poppins font-normal text-[#D2D4D7]">{convertTimestampToDate(article.article_published_date)}</p>
                         <p className="m-0 text-[12px] font-poppins font-normal text-[#D2D4D7]">{article.article_watched}K</p>

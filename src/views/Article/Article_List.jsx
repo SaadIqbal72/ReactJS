@@ -8,6 +8,7 @@ const ArticleList = () => {
             id: 1,
             article_image: articleImg,
             article_title: "The Best NFT blockchains",
+            article_title_slug: "the-best-nft-blockchains",
             bid_created_by: "Martin Lora",
             article_short_descrition: "Do you know the right NFT blockchain for you? It may be strange; But anyone can choose a different blockchain to operate in the world of different tokens. Currently, more than ten blockchain networks support NFTs; But in which of these networks you can succeed, it depends on the type of activity and your goals.",
             article_long_descrition: "Do you know the right NFT blockchain for you? It may be strange; But anyone can choose a different blockchain to operate in the world of different tokens. Currently, more than ten blockchain networks support NFTs; But in which of these networks you can succeed, it depends on the type of activity and your goals.",

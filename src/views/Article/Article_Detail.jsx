@@ -1,7 +1,10 @@
+import { useParams } from "react-router-dom"
+
 const ArticleDetail = () => {
+    const {id}= useParams();
     return (
-        <div>
-            <h1>Article Detail</h1>
+        <div className='min-h-screen bg-[#202835]'>
+            <h1>Article Detail: {id}</h1>
         </div>
     )
 }
