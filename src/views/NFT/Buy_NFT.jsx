@@ -4,7 +4,7 @@ const BuyNFT = () => {
     return (
         <div className='min-h-screen p-[50px] bg-[#202835]'>
             <div className="relative">
-                <img src={ } alt="Create NFT Banner" className="w-full h-[500px] object-cover" />
+                {/* <img src={ } alt="Create NFT Banner" className="w-full h-[500px] object-cover" /> */}
                 <div className="absolute top-0 left-0 flex items-center justify-center w-full h-full">
                     <h1 className="m-0 text-[40px] font-poppins font-bold text-[#E897B4]">Create NFT</h1>
                     <p className="m-0 text-[20px] font-poppins font-normal text-[#E7F1D7]">Unleash your creativity and bring your digital art to life! With our easy-to-use platform, you can design, mint, and showcase your unique NFTs. Join the revolution and start your journey in the exciting world of digital collectibles today!</p>

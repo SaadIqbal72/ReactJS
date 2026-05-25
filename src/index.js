@@ -4,8 +4,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from "react-router-dom";
-import Footer from './components/common/footer';
-import Header from './components/common/header';
+import Footer from './components/layout_component/footer';
+import Header from './components/layout_component/header';
 import AppRoutes from './routes/AppRoutes';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
